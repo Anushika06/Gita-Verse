@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { WishlistContext } from '../context/WishlistContext';
-import { useNavigate } from 'react-router-dom'; // ✅ Import useNavigate
+import { useNavigate } from 'react-router-dom';
 
 const WishList = () => {
   const { wishlist, handleWishlistToggle } = useContext(WishlistContext);
-  const navigate = useNavigate(); // ✅ Create navigate instance
+  const navigate = useNavigate(); 
 
   return (
     <div className="chapter-list">
       <div className="w-full flex justify-center">
         <div className="mb-8 bg-blue-950 text-3xl text-white rounded p-4 w-[600px] text-center">
-          <h1><strong>Your Wishlist</strong></h1>
+          <h1><strong>Your Favourites</strong></h1>
         </div>
       </div>
 
@@ -29,7 +29,7 @@ const WishList = () => {
 
             <button
               className="read-more-button mt-3 text-blue-600 hover:underline"
-              onClick={() => navigate(`/chapter/${chapter.chapter_number}`)} // ✅ Navigate to full details
+              onClick={() => navigate(`/chapter/${chapter.chapter_number}`)} 
             >
               Read More
             </button>

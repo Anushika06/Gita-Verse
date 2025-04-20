@@ -32,7 +32,10 @@ function NavBar() {
             <span className="text-xl">About Gita</span>
           </NavLink>
           <NavLink to="/wishlist" className={linkClass}>
-            <span className="text-xl">Wishlist</span>
+            <span className="text-xl">Favourites</span>
+          </NavLink>
+          <NavLink to="/form" className={linkClass}>
+            <span className="text-xl">Feedback</span>
           </NavLink>
         </div>
 
@@ -56,7 +59,10 @@ function NavBar() {
             About Gita
           </NavLink>
           <NavLink to="/wishlist" className={linkClass} onClick={toggleMenu}>
-            Wishlist
+            Favourites
+          </NavLink>
+          <NavLink to="/form" className={linkClass} onClick={toggleMenu}>
+            Feedback
           </NavLink>
         </div>
       )}

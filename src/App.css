@@ -106,3 +106,12 @@ body {
 .read-more-button:hover {
   background-color: orange;
 }
+
+.scroll-to-top-btn {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.scroll-to-top-btn:hover {
+  transform: scale(1.1);
+}

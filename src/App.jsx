@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'; 
+import { useState, useRef } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 
@@ -8,13 +8,14 @@ import Verse from './components/Verse';
 import ChapterList from './components/ChapterList';
 import WishList from './components/WishList';
 import { WishlistProvider } from './context/WishlistContext';
-import Quotes from './components/Quotes'
+import Quotes from './components/Quotes';
 import AboutGita from './components/AboutGita';
-import ChapterDetails from './components/ChapterDetails'; 
+import ChapterDetails from './components/ChapterDetails';
+import SubmitForm from './components/SubmitForm';
 
 function App() {
   const [wishlist, setWishlist] = useState([]);
-  const chapterListRef = useRef(null); 
+  const chapterListRef = useRef(null);
 
   const addToWishlist = (chapter) => {
     const exists = wishlist.find((item) => item.chapter_number === chapter.chapter_number);
@@ -50,7 +51,7 @@ function App() {
       element: (
         <>
           <NavBar />
-          <Quotes/>
+          <Quotes />
         </>
       )
     },
@@ -73,11 +74,20 @@ function App() {
       )
     },
     {
-      path: '/chapter/:id', // ✅ NEW route for chapter details
+      path: '/chapter/:id',
       element: (
         <>
           <NavBar />
           <ChapterDetails />
+        </>
+      )
+    },
+    {
+      path: '/form',
+      element: (
+        <>
+          <NavBar />
+          <SubmitForm />
         </>
       )
     }

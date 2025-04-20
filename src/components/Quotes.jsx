@@ -46,34 +46,33 @@ const Quotes = () => {
       {error ? (
         <p className="text-red-400">{error}</p>
       ) : slokData ? (
-        <div className="w-[80vw] bg-blue-900 rounded-xl shadow p-6 text-center border border-white">
-          <h2 className="text-lg text-white mb-4">
+        <div className="w-[60vw] bg-yellow-500 rounded-xl shadow p-6 text-center border border-white">
+          <h2 className=" text-black mb-4">
             Chapter {slokData.chapter}, Verse {slokData.verse}
           </h2>
-          <p className="text-xl font-serif mb-4 text-amber-300 whitespace-pre-line font-bold italic">{slokData.slok}</p>
-          <p className="text-white mb-4">
+          <p className="text-2xl font-serif mb-4 text-red-900 whitespace-pre-line font-bold italic">{slokData.slok}</p>
+          <p className="text-black mb-4">
             <strong>Translation (Swami Sivananda):</strong><br />
-            <br></br>
             {slokData?.siva?.et || 'Not available'}
           </p>
-          <p className="text-white text-sm mt-6">
+          <p className="text-black mt-6">
             <strong>Hindi Commentary (Chinmayananda or Tejomayananda):</strong><br />
             <br></br>
             {slokData?.chinmay?.hc || slokData?.tej?.ht || 'Not available'}
           </p>
+          <div className="flex justify-center gap-10 mt-6 text-2xl text-red-950">
+        <button onClick={prevVerse}>
+          <i className="fa-solid fa-arrow-left cursor-pointer"></i>
+        </button>
+        <button onClick={nextVerse}>
+          <i className="fa-solid fa-arrow-right cursor-pointer"></i>
+        </button>
+      </div>
         </div>
+        
       ) : (
         <p className="text-white">Loading...</p>
       )}
-
-      <div className="flex gap-10 mt-6 text-2xl text-white">
-        <button onClick={prevVerse}>
-          <i className="fa-solid fa-arrow-left"></i>
-        </button>
-        <button onClick={nextVerse}>
-          <i className="fa-solid fa-arrow-right"></i>
-        </button>
-      </div>
     </div>
   );
 };
