@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { WishlistContext } from '../context/WishlistContext';
+import { useNavigate } from 'react-router-dom'; // ✅ Import useNavigate
 
 const WishList = () => {
   const { wishlist, handleWishlistToggle } = useContext(WishlistContext);
+  const navigate = useNavigate(); // ✅ Create navigate instance
 
   return (
     <div className="chapter-list">
@@ -24,7 +26,14 @@ const WishList = () => {
             <p><strong>Verses:</strong> {chapter.verses_count}</p>
             <p><strong>Meaning:</strong> {chapter.meaning.en}</p>
             <p>{chapter.summary ? chapter.summary.en.substring(0, 150) + '...' : 'No summary available.'}</p>
-            <button className="read-more-button mt-3">Read More</button>
+
+            <button
+              className="read-more-button mt-3 text-blue-600 hover:underline"
+              onClick={() => navigate(`/chapter/${chapter.chapter_number}`)} // ✅ Navigate to full details
+            >
+              Read More
+            </button>
+
             <div
               className="mt-5 cursor-pointer text-xl hover:scale-110 transition"
               onClick={() => handleWishlistToggle(chapter)}

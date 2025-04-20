@@ -8,8 +8,9 @@ import Verse from './components/Verse';
 import ChapterList from './components/ChapterList';
 import WishList from './components/WishList';
 import { WishlistProvider } from './context/WishlistContext';
-import Quotes from './components/Quotes';
+import Quotes from './components/Quotes'
 import AboutGita from './components/AboutGita';
+import ChapterDetails from './components/ChapterDetails'; 
 
 function App() {
   const [wishlist, setWishlist] = useState([]);
@@ -49,7 +50,7 @@ function App() {
       element: (
         <>
           <NavBar />
-          <Quotes />
+          <Quotes/>
         </>
       )
     },
@@ -68,6 +69,15 @@ function App() {
         <>
           <NavBar />
           <WishList wishlist={wishlist} />
+        </>
+      )
+    },
+    {
+      path: '/chapter/:id', // ✅ NEW route for chapter details
+      element: (
+        <>
+          <NavBar />
+          <ChapterDetails />
         </>
       )
     }

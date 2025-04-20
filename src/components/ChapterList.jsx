@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { WishlistContext } from '../context/WishlistContext';
 import Pagination from './Pagination';
+import { useNavigate } from 'react-router-dom'; // ✅ Import navigate
 
 const ChapterList = () => {
   const [chapters, setChapters] = useState([]);
@@ -9,6 +10,7 @@ const ChapterList = () => {
   const chaptersPerPage = 6;
 
   const { wishlist, handleWishlistToggle } = useContext(WishlistContext);
+  const navigate = useNavigate(); // ✅ Initialize navigate
 
   useEffect(() => {
     const fetchChapters = async () => {
@@ -34,13 +36,13 @@ const ChapterList = () => {
 
   const pageNext = () => {
     if (page < Math.ceil(chapters.length / chaptersPerPage)) {
-      setPage(prev => prev + 1);
+      setPage((prev) => prev + 1);
     }
   };
 
   const pagePrev = () => {
     if (page > 1) {
-      setPage(prev => prev - 1);
+      setPage((prev) => prev - 1);
     }
   };
 
@@ -66,7 +68,13 @@ const ChapterList = () => {
             <p><strong>Verses:</strong> {chapter.verses_count}</p>
             <p><strong>Meaning:</strong> {chapter.meaning.en}</p>
             <p>{chapter.summary ? chapter.summary.en.substring(0, 150) + '...' : 'No summary available.'}</p>
-            <button className="read-more-button mt-3">Read More</button>
+
+            <button
+              className="read-more-button mt-3 text-blue-600 hover:underline"
+              onClick={() => navigate(`/chapter/${chapter.chapter_number}`)} // ✅ navigate to details
+            >
+              Read More
+            </button>
 
             <div
               className="mt-5 cursor-pointer text-xl hover:scale-110 transition"
