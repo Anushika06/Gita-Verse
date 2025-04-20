@@ -5,7 +5,7 @@ A spiritual web app that presents the teachings of the Bhagavad Gita in a beauti
 
 ## 🧘 Description
 
-This project is a React-based single-page application (SPA) that allows users to explore the teachings of the Shreemad Bhagavad Gita. It offers an intuitive interface to:
+This project is a React-based single-page application that allows users to explore the teachings of the Shreemad Bhagavad Gita. It offers an intuitive interface to:
 
 - Browse chapter summaries
 - Read individual verses with navigation
@@ -20,8 +20,7 @@ This project is a React-based single-page application (SPA) that allows users to
 - 💖 **Wishlist** – Save your favorite chapters for quick access.
 - 📢 **Feedback Form** – Submit your insights or questions about any chapter and verse.
 - 🤖 **(Coming Soon)**: AI-powered assistant using Gemini API to answer spiritual doubts.
-- 🔝 **Smooth Scroll** – A button appears on the home page to scroll to top.
-- 📷 **Quote Section** – Beautiful verses shown one at a time with visuals.
+- 📷 **Quote Section** – Beautiful verses shown one at a time.
 - 📘 **About Page** – Learn about the importance and teachings of the Gita.
 
 ## 🛠 Tech Stack
