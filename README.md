@@ -47,3 +47,8 @@ npm run dev <br>
 **4. Open your browser and go to:** <br><br>
 http://localhost:5173
 
+
+![Homepage](screenshots/Home.png)
+![Verse](screenshots/Verse.png)
+![Chapters](screenshots/Chapters.png)
+![Favourites](screenshots/Favourites.png)
