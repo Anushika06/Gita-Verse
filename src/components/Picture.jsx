@@ -18,19 +18,19 @@ function Picture({ scrollToChapters }) {
   }, []);
 
   return (
-    <div className="flex items-center justify-center mt-8">
+    <div className="flex items-center justify-center mt-8 px-4">
       <div
-        className="relative h-[70vh] w-[50vw] rounded-2xl overflow-hidden shadow-xl border-4 border-yellow-500 bg-contain bg-no-repeat bg-center transition-all duration-1000 ease-in-out"
+        className="relative w-full h-[40vh] sm:h-[60vh] md:h-[70vh] md:w-[70vw] lg:w-[50vw] rounded-2xl overflow-hidden shadow-xl border-4 border-yellow-500 bg-contain bg-no-repeat bg-center transition-all duration-1000 ease-in-out"
         style={{
           backgroundImage: `url(${images[currentIndex]})`,
         }}
       >
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center">
-          <h1 className="text-yellow-400 text-4xl font-bold bg-black/60 px-4 py-2 rounded-xl mb-4">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center px-2">
+          <h1 className="text-yellow-400 text-2xl sm:text-3xl md:text-4xl font-bold bg-black/60 px-4 py-2 rounded-xl mb-4">
             Experience the Gita
           </h1>
           <button
-            className="bg-yellow-400 hover:bg-white cursor-pointer text-black font-semibold px-6 py-2 rounded shadow-lg transition duration-300"
+            className="bg-yellow-400 hover:bg-white cursor-pointer text-black font-semibold px-5 py-2 rounded shadow-lg transition duration-300"
             onClick={scrollToChapters}
           >
             Read Now
